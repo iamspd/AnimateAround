@@ -46,6 +46,8 @@
         android:gravity="bottom">
 
         <Button
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
             android:textAllCaps="false"
             android:id="@+id/btnAnimStart"
             android:layout_width="@dimen/imageDimen"
@@ -54,6 +56,8 @@
             android:text="@string/btn_start" />
 
         <Button
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
             android:textAllCaps="false"
             android:id="@+id/btnAnimStop"
             android:layout_width="@dimen/imageDimen"
