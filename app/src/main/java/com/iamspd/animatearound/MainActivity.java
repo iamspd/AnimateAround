@@ -1,14 +1,13 @@
 package com.iamspd.animatearound;
 
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.view.MenuItem;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.iamspd.animatearound.fragments.EarthMoonFragment;
@@ -19,6 +18,32 @@ public class MainActivity extends AppCompatActivity {
     // widgets
     private BottomNavigationView mBottomNavigationView;
 
+    // listener handles the BottomNavigationView item click calls
+    //  which fragment to initialize on FrameLayout
+    private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                    Fragment selectedFragment = null;
+
+                    switch (menuItem.getItemId()) {
+                        case R.id.menuItem1:
+                            selectedFragment = new FramedFragment();
+                            break;
+
+                        case R.id.menuItem2:
+                            selectedFragment = new EarthMoonFragment();
+                            break;
+
+                    }
+
+                    // replaces and inflates the Fragment Layout on to the FrameLayout
+                    getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
+                            selectedFragment).commit();
+                    return true;
+                }
+            };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,12 +51,15 @@ public class MainActivity extends AppCompatActivity {
 
         mBottomNavigationView = findViewById(R.id.bottomNavBar);
         mBottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
+                new FramedFragment()).commit();
     }
 
     /**
      * method to handle the back press event on home screen
-     *  it will prompt an {@link AlertDialog} on a single press with two options
-     *  and will operate according to the selection user opts out for
+     * it will prompt an {@link AlertDialog} on a single press with two options
+     * and will operate according to the selection user opts out for
      */
     @Override
     public void onBackPressed() {
@@ -61,30 +89,4 @@ public class MainActivity extends AppCompatActivity {
         });
         builder.show();
     }
-
-    // listener handles the BottomNavigationView item click calls
-    //  which fragment to initialize on FrameLayout
-    private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener =
-            new BottomNavigationView.OnNavigationItemSelectedListener(){
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                    Fragment selectedFragment = null;
-
-                    switch (menuItem.getItemId()){
-                        case R.id.menuItem1:
-                            selectedFragment = new FramedFragment();
-                            break;
-
-                        case R.id.menuItem2:
-                            selectedFragment = new EarthMoonFragment();
-                            break;
-
-                    }
-
-                    // replaces and inflates the Fragment Layout on to the FrameLayout
-                    getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
-                            selectedFragment).commit();
-                    return true;
-                }
-            };
 }

@@ -33,21 +33,23 @@ public class EarthMoonFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_framed, container, false);
-
-        fAnimMoon = view.findViewById(R.id.ivMoon);
-        final Animation revolveMoon = AnimationUtils.loadAnimation(getActivity(), R.anim.tween_revolve);
-        fAnimMoon.startAnimation(revolveMoon);
+        View view = inflater.inflate(R.layout.fragment_earth_moon, container, false);
 
 
         fAnimEarth = view.findViewById(R.id.ivEarth);
         final Animation rotateEarth = AnimationUtils.loadAnimation(getActivity(), R.anim.tween_rotate);
-        fAnimEarth.startAnimation(rotateEarth);
+
+        fAnimMoon = view.findViewById(R.id.ivMoon);
+        final Animation revolveMoon = AnimationUtils.loadAnimation(getActivity(), R.anim.tween_revolve);
 
         fBtnStart = view.findViewById(R.id.btnAnimStart);
         fBtnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                // on a button click {@link AnimationUtils} loads the specified animation
+                // and operation is executed for moon and earth
+
                 fAnimEarth.startAnimation(rotateEarth);
                 fAnimMoon.startAnimation(revolveMoon);
             }

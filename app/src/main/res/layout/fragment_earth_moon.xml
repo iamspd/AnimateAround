@@ -20,7 +20,6 @@
         android:layout_width="@dimen/tweenMoon"
         android:layout_height="@dimen/tweenMoon"
         android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/moon_img"
         android:scaleType="centerCrop"
@@ -47,6 +46,7 @@
         android:gravity="bottom">
 
         <Button
+            android:textAllCaps="false"
             android:id="@+id/btnAnimStart"
             android:layout_width="@dimen/imageDimen"
             android:layout_height="wrap_content"
@@ -54,6 +54,7 @@
             android:text="@string/btn_start" />
 
         <Button
+            android:textAllCaps="false"
             android:id="@+id/btnAnimStop"
             android:layout_width="@dimen/imageDimen"
             android:layout_height="wrap_content"
