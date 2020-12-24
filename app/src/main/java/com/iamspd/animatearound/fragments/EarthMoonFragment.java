@@ -33,32 +33,18 @@ public class EarthMoonFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_framed, container, false);
-    }
+        View view = inflater.inflate(R.layout.fragment_framed, container, false);
 
-    /**
-     * method to handle operations on view
-     * starts and stops the animation from the {@link AnimationUtils}
-     * based on the user click
-     *
-     * @param rootView           is where the actual view is created
-     * @param savedInstanceState state of the view at a time
-     */
-
-    @Override
-    public void onViewCreated(@NonNull View rootView, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(rootView, savedInstanceState);
-
-        fAnimMoon = rootView.findViewById(R.id.ivMoon);
+        fAnimMoon = view.findViewById(R.id.ivMoon);
         final Animation revolveMoon = AnimationUtils.loadAnimation(getActivity(), R.anim.tween_revolve);
         fAnimMoon.startAnimation(revolveMoon);
 
 
-        fAnimEarth = rootView.findViewById(R.id.ivEarth);
+        fAnimEarth = view.findViewById(R.id.ivEarth);
         final Animation rotateEarth = AnimationUtils.loadAnimation(getActivity(), R.anim.tween_rotate);
         fAnimEarth.startAnimation(rotateEarth);
 
-        fBtnStart = rootView.findViewById(R.id.btnAnimStart);
+        fBtnStart = view.findViewById(R.id.btnAnimStart);
         fBtnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,7 +53,7 @@ public class EarthMoonFragment extends Fragment {
             }
         });
 
-        fBtnStop = rootView.findViewById(R.id.btnAnimStop);
+        fBtnStop = view.findViewById(R.id.btnAnimStop);
         fBtnStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,5 +65,8 @@ public class EarthMoonFragment extends Fragment {
 
             }
         });
+
+        return view;
     }
+
 }

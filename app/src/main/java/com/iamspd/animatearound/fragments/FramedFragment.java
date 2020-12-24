@@ -26,8 +26,9 @@ public class FramedFragment extends Fragment {
 
     /**
      * method to provide a fragment view on the screen
-     * @param inflater inflates the layout to the fragment
-     * @param container the view where the layout is going to be inflated
+     *
+     * @param inflater           inflates the layout to the fragment
+     * @param container          the view where the layout is going to be inflated
      * @param savedInstanceState state of the layout at which it is inflated
      * @return view on the screen
      */
@@ -35,21 +36,11 @@ public class FramedFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_framed, container, false);
-    }
+        View view = inflater.inflate(R.layout.fragment_framed, container, false);
 
-    /**
-     * method to handle operations on view
-     * @param rootView is where the actual view is created
-     * @param savedInstanceState state of the view at a time
-     */
-    @Override
-    public void onViewCreated(@NonNull View rootView, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(rootView, savedInstanceState);
+        fAnimImage = view.findViewById(R.id.ivFrameImages);
 
-        fAnimImage = rootView.findViewById(R.id.ivFrameImages);
-
-        fAnimStart = rootView.findViewById(R.id.btnAnimStart);
+        fAnimStart = view.findViewById(R.id.btnAnimStart);
         fAnimStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,7 +51,7 @@ public class FramedFragment extends Fragment {
             }
         });
 
-        fAnimStop = rootView.findViewById(R.id.btnAnimStop);
+        fAnimStop = view.findViewById(R.id.btnAnimStop);
         fAnimStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,11 +61,13 @@ public class FramedFragment extends Fragment {
                 stopFrameAnimation();
             }
         });
+
+        return view;
     }
 
     /**
      * method to handle animation of framed images
-     *  to animate them in given time duration
+     * to animate them in given time duration
      */
     public void startFrameAnimation() {
 
@@ -111,6 +104,5 @@ public class FramedFragment extends Fragment {
         fAnimationDrawable.stop();
         fAnimationDrawable.setVisible(false, false);
     }
-
 
 }
