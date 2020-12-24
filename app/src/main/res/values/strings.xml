@@ -31,5 +31,14 @@
     <!-- String value for alert box no [CHAR LIMIT = 10] -->
     <string name="alert_no">No</string>
 
+    <!-- String value for image earth [CHAR LIMIT = 10] -->
+    <string name="earth_img">Earth</string>
+
+    <!-- String value for image moon [CHAR LIMIT = 10] -->
+    <string name="moon_img">Moon</string>
+
+    <!-- String value for text orbit [CHAR LIMIT = 10] -->
+    <string name="orbit">Orbit</string>
+
 
 </resources>

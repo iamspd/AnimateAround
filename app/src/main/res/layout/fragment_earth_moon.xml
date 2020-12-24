@@ -1,6 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="64dp"
+        android:text="@string/orbit"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/maheshwariAnimMoon"
+        android:layout_width="@dimen/tweenMoon"
+        android:layout_height="@dimen/tweenMoon"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/moon_img"
+        android:scaleType="centerCrop"
+        android:src="@drawable/moon_img" />
+
+    <ImageView
+        android:id="@+id/maheshwariAnimEarth"
+        android:layout_width="@dimen/tweenEarth"
+        android:layout_height="@dimen/tweenEarth"
+        android:layout_gravity="center"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/earth_img"
+        android:scaleType="centerCrop"
+        android:src="@drawable/earth_img" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
+        android:layout_weight="1"
+        android:gravity="bottom">
+
+        <Button
+            android:id="@+id/btnAnimStart"
+            android:layout_width="@dimen/imageDimen"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:text="@string/btn_start" />
+
+        <Button
+            android:id="@+id/btnAnimStop"
+            android:layout_width="@dimen/imageDimen"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_stop" />
+
+    </LinearLayout>
+
 
 </LinearLayout>
