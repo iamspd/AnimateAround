@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menuItem1"
+        android:icon="@drawable/ic_frame"
+        android:title="@string/menu_framedAnimation" />
+
+    <item
+        android:id="@+id/menuItem2"
+        android:icon="@drawable/ic_revolve"
+        android:title="@string/menu_earthMoonAnimation" />
+
+</menu>

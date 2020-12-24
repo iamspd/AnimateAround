@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">AnimateAround</string>
+
+    <!-- String value for Fragment 1 title [CHAR LIMIT = 15] -->
+    <string name="title_frag1">Framed Animation</string>
+
+    <!-- String value for Fragment 2 title [CHAR LIMIT = 20] -->
+    <string name="title_frag2">Animate Earth and Moon</string>
+
+    <!-- String value for button start [CHAR LIMIT = 10] -->
+    <string name="btn_start">Start</string>
+
+    <!-- String value for button stop [CHAR LIMIT = 10] -->
+    <string name="btn_stop">Stop</string>
+
+    <!-- String value for menu item 1 [CHAR LIMIT = 15] -->
+    <string name="menu_framedAnimation">Framed Animation</string>
+
+    <!-- String value for menu item 2 [CHAR LIMIT = 15] -->
+    <string name="menu_earthMoonAnimation">Earth and Moon</string>
+
+    <!-- String value for alert box title [CHAR LIMIT = 10] -->
+    <string name="alert_title">Exit App</string>
+
+    <!-- String value for alert box message [CHAR LIMIT = 15] -->
+    <string name="alert_message">Are you sure?</string>
+
+    <!-- String value for alert box button yes [CHAR LIMIT = 10] -->
+    <string name="alert_yes">Yes</string>
+
+    <!-- String value for alert box no [CHAR LIMIT = 10] -->
+    <string name="alert_no">No</string>
+
+
 </resources>
