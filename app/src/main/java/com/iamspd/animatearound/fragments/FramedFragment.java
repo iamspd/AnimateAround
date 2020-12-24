@@ -47,11 +47,9 @@ public class FramedFragment extends Fragment {
     public void onViewCreated(@NonNull View rootView, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(rootView, savedInstanceState);
 
-        final View view = rootView;
+        fAnimImage = rootView.findViewById(R.id.ivFrameImages);
 
-        fAnimImage = view.findViewById(R.id.ivFrameImages);
-
-        fAnimStart = view.findViewById(R.id.btnAnimStart);
+        fAnimStart = rootView.findViewById(R.id.btnAnimStart);
         fAnimStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,7 +60,7 @@ public class FramedFragment extends Fragment {
             }
         });
 
-        fAnimStop = view.findViewById(R.id.btnAnimStop);
+        fAnimStop = rootView.findViewById(R.id.btnAnimStop);
         fAnimStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

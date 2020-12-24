@@ -16,7 +16,7 @@
         android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/maheshwariAnimMoon"
+        android:id="@+id/ivMoon"
         android:layout_width="@dimen/tweenMoon"
         android:layout_height="@dimen/tweenMoon"
         android:layout_marginStart="32dp"
@@ -27,7 +27,7 @@
         android:src="@drawable/moon_img" />
 
     <ImageView
-        android:id="@+id/maheshwariAnimEarth"
+        android:id="@+id/ivEarth"
         android:layout_width="@dimen/tweenEarth"
         android:layout_height="@dimen/tweenEarth"
         android:layout_gravity="center"
