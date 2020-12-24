@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="imageDimen">184dp</dimen>
+    <dimen name="animImageHeight">300dp</dimen>
+    <dimen name="tweenMoon">60dp</dimen>
+    <dimen name="tweenEarth">100dp</dimen>
+</resources>
