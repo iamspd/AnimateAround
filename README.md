@@ -8,7 +8,7 @@ And a one activity
 
  1. MainActivity.java - implements bottom navigation bar and inflates the fragment layout on to the main screen while first fragment selected by default on home screen. 
 
-## To get Started
+## To Get Started
 Open the code into the Android Studio and let the gradle sync finish. 
 Update the dependencies if it suggests to do so. 
 Now, run the project by pressing `shift+f10` on the emulator or on the Android device.
